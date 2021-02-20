@@ -1,4 +1,5 @@
 import os
+import numpy as np
 from rasterfairy import transformPointCloud2D
 from PIL import Image, ImageFont, ImageDraw 
 from tqdm import tqdm
@@ -40,10 +41,10 @@ def generate_mosaic(embeddings, images, mosaic_width, mosaic_height,
             print(f"Failed to add image {f_img} see error:\n{e}")    
     
     # write an annotation
-    fnt = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', int(tile_height * 1.2) )
+    #fnt = ImageFont.truetype('Pillow/Tests/fonts/FreeMono.ttf', int(tile_height * 1.2) )
     draw = ImageDraw.Draw(mosaic)
     draw.text((4, (tile_height * (mosaic_height)) + 10), 
-               title, title_rbg, font=fnt)
+               title, title_rbg)
     
     if save_as_file and not os.path.exists(save_as_file):
         try:
@@ -73,9 +74,9 @@ def scatterplot_images(embeddings, images,
         # read and resize image
         tile = Image.open(f_img)
         rs = max(1, tile.width / max_dim, tile.height / max_dim)
-        tile_width_ = int(tile.width / rs)
-        tile_height_ = int(tile.height / rs)
-        aspect_ratio_ = float(tile_width) / tile_height 
+        tile_width = int(tile.width / rs)
+        tile_height = int(tile.height / rs)
+        aspect_ratio = float(tile_width) / tile_height 
         tile = resize_image(tile, 
                             tile_width, 
                             tile_height, 
@@ -88,5 +89,5 @@ def scatterplot_images(embeddings, images,
         full_image.paste(tile, 
                          box=img_coords, 
                          mask=tile.convert('RGBA'))
-
     return full_image
+
