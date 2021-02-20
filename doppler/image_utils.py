@@ -7,6 +7,7 @@ import shutil
 from PIL import Image
 import imagehash
 import matplotlib.pyplot as plt
+from torchvision import transforms
 
 
 s = requests.Session()
@@ -116,3 +117,4 @@ def download_media_and_return_dhash(url, fn):
             return dhash, img_size
     
     return 'NOHASH', 0
+
