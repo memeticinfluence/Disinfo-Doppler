@@ -3,12 +3,12 @@ import datetime
 
 # change this!
 subreddit = 'dankmemes'
-data_dir = '/mnt/n1p1/data/platforms/reddit'
+data_dir = 'data/platforms/reddit'
 working_dir = os.path.join(data_dir, f'{subreddit}/')
 media_dir = os.path.join(data_dir, 'media')
 mosaic_dir = os.path.join(working_dir, 'mosaics')
 output_dir = 'ouput/'
-image_lookup_file = os.path.join(working_dir, 'media.json.gz')
+image_lookup_file = os.path.join(working_dir, 'media.csv.gz')
 
 # these files don't exist yet
 logits_file = os.path.join(working_dir, 'image_features.csv.gz')
