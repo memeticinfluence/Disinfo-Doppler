@@ -1,14 +1,13 @@
 version: '3.6'
 services:
     jupyter:
-        build: .
+        build: . 
         container_name: jupyter
         ports:
           - 8888:8888
         volumes:
-            - ./:/work
-        working_dir: /work
+          - jupyter_data:/home/jovyan/work/data
 
 volumes:
-    jupyter:
+    jupyter_data:
         driver: local
