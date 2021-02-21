@@ -1,4 +1,5 @@
 import requests
+import time
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
@@ -68,6 +69,7 @@ def download_subreddit_posts(subreddit, size=5000, ascending=False,
             last_record = data[-1]
             last_record_date = last_record.get('created_utc')
             i += 1
+            time.sleep(0.5)
     
     except KeyboardInterrupt:
         if verbose:
