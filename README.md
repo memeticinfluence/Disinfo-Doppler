@@ -24,23 +24,6 @@ Configure the subreddit to download from in `config.py`.
 ## Intro
 The Doppler is an open source computer vision toolkit used to trace and measure image-based activity online. These notebooks download imagery from various sources, such as subreddits, and then creates image-clustered mosaics over time. This helps us understand, visually, what sorts of source content and edits are being spread into an online community. 
 
-In this article we'll display these features using Reddit data collected by our friends at [PushShift](PushShift.io). However, the methods and backend are generalizable to any source of images. By standardizing how we study images we get closer to cross-platform analysis.
-
-## Table of Contents
-This article is broken up into several Jupyter Notebooks.
-1. Data Collection <br>
-    <i>How to build an image dataset from Reddit?</i> <br>
-    [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/1-download-data.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/1-download-data.ipynb)  
-2. Feature Extraction <br>
-    <i>How to transform images into searchable features using a pre-trained neural net?</i> <br>
-    [GitHub](lhttps://github.com/yinleon/doppler_tutorials/blob/master/2-feature-extraction.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/2-feature-extraction.ipynb)
-3. Mosaic Analysis <br>
-    <i>How to sort images by visual similarity?</i> <br>
-    [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/3-mosaic-analysis.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/3-mosaic-analysis.ipynb)
-4. ~~Reverse Image Search <br>
-    <i>How to find similar images and provenance?</i> <br>
-    [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb)~~
-
 ## How does it work?
 In order to use the two functions of the Doppler, images need to be transformed into differential features. To do this we use two computer vision techniques, d-hashing and feature extraction using a pre-trained neural network.
 
