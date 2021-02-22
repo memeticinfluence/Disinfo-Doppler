@@ -24,7 +24,7 @@ This article is broken up into several Jupyter Notebooks.
 3. Mosaic Analysis <br>
     <i>How to sort images by visual similarity?</i> <br>
     [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/3-mosaic-analysis.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/3-mosaic-analysis.ipynb)
-~~4. Reverse Image Search <br>
+4. ~~Reverse Image Search <br>
     <i>How to find similar images and provenance?</i> <br>
     [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb)~~
 
