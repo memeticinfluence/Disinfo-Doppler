@@ -2,13 +2,13 @@
 Leon Yin
 <br>
 Published: 2019-04-06<br>
-Last Updated: 2019-04-06
+Last Updated: 2021-02-21
 
 ## Intro
 The Doppler is an open source computer vision toolkit used to trace and measure image-based activity online. 
 
 The Doppler has two main functions:
-1. Reverse Image Search 
+~~1. Reverse Image Search~~ 
 2. Mosaic Analysis. 
 
 In this article we'll display these features using Reddit data collected by our friends at [PushShift](PushShift.io). However, the methods and backend are generalizable to any source of images. By standardizing how we study images we get closer to cross-platform analysis.
@@ -24,9 +24,9 @@ This article is broken up into several Jupyter Notebooks.
 3. Mosaic Analysis <br>
     <i>How to sort images by visual similarity?</i> <br>
     [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/3-mosaic-analysis.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/3-mosaic-analysis.ipynb)
-4. Reverse Image Search <br>
+~~4. Reverse Image Search <br>
     <i>How to find similar images and provenance?</i> <br>
-    [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb)
+    [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb)~~
 
 The repository is also hosted in the [Binder](https://mybinder.org/v2/gh/yinleon/doppler_tutorials/master
 ) interactive environment.
@@ -41,7 +41,6 @@ D-Hashing creates a fingerprint for an image (regardless of size or minor color 
 Neural networks are able to learn numeric attributes used to differentiate between images. These numbers are continuous which allows us to calculate similarity. These features are what allow us to cluster images for the mosaic and rank similarity for the reverse image search. Thanks for the decidcation of open source developers and researchers implementation is relatively easy. However, it requires a lot of matrix math which is a lot of work for a regular computer. This process is greatly accelerated using a computer with a graphics processing unit (GPU). We use PyTorch to do this.
 
 These two techniques serve somewhat different purposes. The Doppler architecture intends to take advantage of both techniques when appropriate.
-
 
 ## Why We're Building this?
 We seek to empower newsrooms, researchers and members of civil society groups to easily research and debunk coordinated hoaxes, harassment campaigns, and racist propaganda that originate from unindexed online commuities.
