@@ -4,7 +4,7 @@
 ![](https://github.com/memeticinfluence/Disinfo-Doppler/blob/master/samples/header.gif?raw=true)
 
 
-**Initial Code by Leon Yin**<br>
+**Initial Code by [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
 Published: 2019-04-06<br>
 <br>
 **Dockerized and maintained by:**<br>
