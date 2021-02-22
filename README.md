@@ -14,12 +14,12 @@ Last Updated: 2021-02-21
 
 1. Download [Docker for Desktop](https://www.docker.com/products/docker-desktop)
 2. Clone this repo to your local machine and CD into Repo in terminal or CMD
-3. Run "docker-compose up" 
-4. When successfully started, a URL should appear in your terminal window. Copy and Paste this into a browser.
+3. Run `docker-compose up` 
+4. When successfully started, a `URL` should appear in your terminal window. Copy and Paste this into a browser.
 
-To update, simply re-download the repo and run "docker-compose build" to rebuild.
+To update, simply re-download the repo and run `docker-compose build` to rebuild.
 
-Configure the subreddit to download from in config.py.
+Configure the subreddit to download from in `config.py`.
 
 ## Intro
 The Doppler is an open source computer vision toolkit used to trace and measure image-based activity online. These notebooks download imagery from various sources, such as subreddits, and then creates image-clustered mosaics over time. This helps us understand, visually, what sorts of source content and edits are being spread into an online community. 
