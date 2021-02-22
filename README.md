@@ -22,6 +22,11 @@ To update, simply re-download the repo and run `docker-compose build` to rebuild
 
 Configure the subreddit to download from in `config.py`.
 
+#### Need Help?
+Email us: code@memeticinfluence.com
+Tweet us: [@memeinfluence](https://twitter.com/memeinfluence)
+Text us:  855-420-MEME (6363)
+
 ## Intro
 The Doppler is an open source computer vision toolkit used to trace and measure image-based activity online. These notebooks download imagery from various sources, such as subreddits, and then creates image-clustered mosaics over time. This helps us understand, visually, what sorts of source content and edits are being spread into an online community. 
 
