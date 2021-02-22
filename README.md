@@ -1,8 +1,8 @@
 # Disinfo Doppler
-Initial Code by Leon Yin<br>
+**Initial Code by Leon Yin**<br>
 Published: 2019-04-06<br>
 <br>
-*Dockerized and maintained by:*<br>
+**Dockerized and maintained by:**<br>
 Jansen Derr - [memetic influence](www.memeticinfluence.com)<br>
 Last Updated: 2021-02-21
 
