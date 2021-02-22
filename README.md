@@ -1,15 +1,22 @@
-# Doppler White Paper
-Leon Yin
-<br>
+# Disinfo Doppler
+Initial Code by Leon Yin
 Published: 2019-04-06<br>
+Dockerized and maintained by Jansen Derr - memetic influence<br>
 Last Updated: 2021-02-21
 
-## Intro
-The Doppler is an open source computer vision toolkit used to trace and measure image-based activity online. 
+## Installation Instructions:
 
-The Doppler has two main functions:
-~~1. Reverse Image Search~~ 
-2. Mosaic Analysis. 
+1. Download [Docker for Desktop](https://www.docker.com/products/docker-desktop)
+2. Clone this repo to your local machine and CD into Repo in terminal or CMD
+3. Run "docker-compose up" 
+4. When successfully started, a URL should appear in your terminal window. Copy and Paste this into a browser.
+
+To update, simply re-download the repo and run "docker-compose build" to rebuild.
+
+Configure the subreddit to download from in config.py.
+
+## Intro
+The Doppler is an open source computer vision toolkit used to trace and measure image-based activity online. These notebooks download imagery from various sources, such as subreddits, and then creates image-clustered mosaics over time. This helps us understand, visually, what sorts of source content and edits are being spread into an online community. 
 
 In this article we'll display these features using Reddit data collected by our friends at [PushShift](PushShift.io). However, the methods and backend are generalizable to any source of images. By standardizing how we study images we get closer to cross-platform analysis.
 
@@ -28,9 +35,6 @@ This article is broken up into several Jupyter Notebooks.
     <i>How to find similar images and provenance?</i> <br>
     [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb)~~
 
-The repository is also hosted in the [Binder](https://mybinder.org/v2/gh/yinleon/doppler_tutorials/master
-) interactive environment.
-
 ## How does it work?
 In order to use the two functions of the Doppler, images need to be transformed into differential features. To do this we use two computer vision techniques, d-hashing and feature extraction using a pre-trained neural network.
 
@@ -46,13 +50,3 @@ These two techniques serve somewhat different purposes. The Doppler architecture
 We seek to empower newsrooms, researchers and members of civil society groups to easily research and debunk coordinated hoaxes, harassment campaigns, and racist propaganda that originate from unindexed online commuities.
 
 Specifically, the Disinfo Doppler will help evidence-based reporting and research into content that is ephemeral, unindexed and toxic in nature. The Disinfo Doppler would allow a greater variety of users the ability to navigate and investigate these spaces in a more secure and systematic way than is currently available. Formalizing how we observse this content is of utmost importance, as extended contact with these spaces is unnecessary and can lead to vicarious trauma, and in some rare cases radicalization. The Disinfo Doppler allows users to distance themselves from tertiary material not relevant to their investigation, while providing context vertically and horizontally.
-
-## About
-Who are we (...)
-
-## Citation
-If this article or the code are helpful to you, please provide a citation.<br>
-```{BIBTEX}```
-
-
-
