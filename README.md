@@ -13,7 +13,7 @@ Last Updated: 2021-02-21
 
 ## Installation Instructions:
 
-1. Download [Docker for Desktop](https://www.docker.com/products/docker-desktop) - restart your computer after installation and make sure it is running before continuing.
+1. Download [Docker for Desktop](https://www.docker.com/products/docker-desktop) - restart your computer after installation and make sure it is running before continuing. In Docker Desktop, especially on Macs, please increase the amount of memory available to at least 8GB.
 2. Clone this repo to your local machine and CD into Repo in terminal or CMD
 3. Run `docker-compose up` 
 4. When successfully started, a `URL` should appear in your terminal window. Copy and Paste this into a browser.
