@@ -1,5 +1,5 @@
 # Disinfo Doppler
-## Create Mosaics of Imagery in Online Communities Over Time
+### Create Mosaics of Imagery in Online Communities Over Time
 
 ![](https://github.com/memeticinfluence/Disinfo-Doppler/blob/master/samples/header.gif?raw=true)
 
