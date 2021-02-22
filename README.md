@@ -40,3 +40,5 @@ These two techniques serve somewhat different purposes. The Doppler architecture
 We seek to empower newsrooms, researchers and members of civil society groups to easily research and debunk coordinated hoaxes, harassment campaigns, and racist propaganda that originate from unindexed online commuities.
 
 Specifically, the Disinfo Doppler will help evidence-based reporting and research into content that is ephemeral, unindexed and toxic in nature. The Disinfo Doppler would allow a greater variety of users the ability to navigate and investigate these spaces in a more secure and systematic way than is currently available. Formalizing how we observse this content is of utmost importance, as extended contact with these spaces is unnecessary and can lead to vicarious trauma, and in some rare cases radicalization. The Disinfo Doppler allows users to distance themselves from tertiary material not relevant to their investigation, while providing context vertically and horizontally.
+
+![]{https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent.png?raw=true}
