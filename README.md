@@ -11,6 +11,8 @@ Last Updated: 2021-02-21
 3. Run "docker-compose up" 
 4. When successfully started, a URL should appear in your terminal window. Copy and Paste this into a browser.
 
+To update, simply re-download the repo and run "docker-compose build" to rebuild.
+
 Configure the subreddit to download from in config.py.
 
 ## Intro
