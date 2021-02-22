@@ -35,9 +35,6 @@ This article is broken up into several Jupyter Notebooks.
     <i>How to find similar images and provenance?</i> <br>
     [GitHub](https://github.com/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb) | [NBViewer](https://nbviewer.jupyter.org/github/yinleon/doppler_tutorials/blob/master/4-reverse-image-search.ipynb)~~
 
-The repository is also hosted in the [Binder](https://mybinder.org/v2/gh/yinleon/doppler_tutorials/master
-) interactive environment.
-
 ## How does it work?
 In order to use the two functions of the Doppler, images need to be transformed into differential features. To do this we use two computer vision techniques, d-hashing and feature extraction using a pre-trained neural network.
 
