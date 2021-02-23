@@ -3,11 +3,11 @@ import datetime
 
 # change these!
 subreddit = 'dankmemes'
-mosiac_height, mosiac_width = 18, 32
-tile_height, tile_width = 28, 36
+mosiac_height, mosiac_width = 18, 32 # number of tiles 
+tile_height, tile_width = 28, 36 # pixel dims for each tile
 num_frames = 30
 fps = 2
-offset = 75
+offset = 75 # number of new images introduced each frame
 
 batch_size = 8
 num_workers = 1
