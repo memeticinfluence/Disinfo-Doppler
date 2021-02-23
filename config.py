@@ -1,16 +1,27 @@
 import os
 import datetime
 
-# change this!
+# change these!
 subreddit = 'dankmemes'
+mosiac_height, mosiac_width = 18, 32
+tile_height, tile_width = 28, 36
+num_frames = 30
+fps = 2
+offset = 75
+
+batch_size = 8
+num_workers = 1
+umap_training_set_size = 1000
+
+# directories
 data_dir = 'data/platforms/reddit'
 working_dir = os.path.join(data_dir, f'{subreddit}/')
 media_dir = os.path.join(data_dir, 'media')
 mosaic_dir = os.path.join(working_dir, 'mosaics')
 output_dir = 'ouput/'
-image_lookup_file = os.path.join(working_dir, 'media.csv.gz')
 
-# these files don't exist yet
+# files
+image_lookup_file = os.path.join(working_dir, 'media.csv.gz')
 logits_file = os.path.join(working_dir, 'image_features.csv.gz')
 full_metadata_file = os.path.join(working_dir, 'full_metadata.csv.gz')
 sample_dataset_file = os.path.join(working_dir, 'sample_media.csv.gz')
