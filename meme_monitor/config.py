@@ -29,7 +29,6 @@ logits_file = os.path.join(working_dir, 'image_features.csv.gz')
 full_metadata_file = os.path.join(working_dir, 'full_metadata.csv.gz')
 sample_dataset_file = os.path.join(working_dir, 'sample_media.csv.gz')
 two_dim_embeddings_file = os.path.join(working_dir, '2d_embeddings.csv')
-file_animation = os.path.join(output_dir,'doppler_mosaic.mp4')
 
 for _dir in [working_dir, media_dir, output_dir, mosaic_dir]:
     os.makedirs(_dir, exist_ok=True)

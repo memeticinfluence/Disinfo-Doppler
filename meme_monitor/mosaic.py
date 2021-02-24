@@ -3,7 +3,7 @@ import numpy as np
 from rasterfairy import transformPointCloud2D
 from PIL import Image, ImageFont, ImageDraw 
 from tqdm import tqdm
-from doppler.image_utils import resize_image
+from image_utils import resize_image
 
 def generate_mosaic(embeddings, images, mosaic_width, mosaic_height,
                     tile_width=72, tile_height=56, title= "Doppler Mosaic",
