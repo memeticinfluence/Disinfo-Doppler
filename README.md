@@ -27,9 +27,9 @@ Last Updated: 2021-02-26
 3. **Run** `docker-compose build` to build (required first boot/update) and `docker-compose up` to start server 
 4. **Copy and Paste** the Jupyter server notebook `URL` from Terminal into your local web browser.
 
-To update, simply `git pull` the repo and run `docker-compose build` to rebuild.
+To **update**, simply `git pull` the repo and run `docker-compose build` to rebuild.
 
-Configure the subreddit to download from in `config.py`.
+**Configure** the subreddit to download from in `config.py`.
 
 ### Not working?
 **Not Starting:** Make sure `Docker Desktop` is running - pull the repo and run `docker-compose build`<br> -  Try `Kernel > Restart and Clear Output` in Jupyter<br>
