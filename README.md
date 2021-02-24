@@ -10,6 +10,7 @@ Published: 2019-04-06<br>
 Created: 2019-2021<br><br>
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Harvard%20Kennedy%20School%20-%20Shorenstein%20Center/logo_small.png?raw=true)
 <br>
+<br>
 **Dockerized and maintained by:**<br>
 [Jansen Derr](https://github.com/jansenderr) - [memetic influence](https://www.memeticinfluence.com)<br>
 Last Updated: 2021-02-21
