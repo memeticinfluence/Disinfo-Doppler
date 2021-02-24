@@ -8,6 +8,7 @@ Published: 2019-04-06<br>
 **Technique by:**<br>
 [Dr. Joan Donovan](https://www.hks.harvard.edu/faculty/joan-donovan) - [HKS Shorenstein Center - TaSC](https://shorensteincenter.org/programs/technology-social-change/)<br>
 Created: 2019-2021<br>
+![]{https://i1.wp.com/shorensteincenter.org/wp-content/uploads/2020/09/TaSC-logo.png}
 <br>
 **Dockerized and maintained by:**<br>
 [Jansen Derr](https://github.com/jansenderr) - [memetic influence](https://www.memeticinfluence.com)<br>
