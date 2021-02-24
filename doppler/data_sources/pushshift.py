@@ -1,5 +1,6 @@
 import requests
 import time
+from tqdm import tqdm
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
@@ -7,28 +8,22 @@ s = requests.Session()
 retries = Retry(total=5, backoff_factor=1, status_forcelist=[ 502, 503, 504 ])
 s.mount('http://', HTTPAdapter(max_retries=retries))
 
-def build_api_endpoint(subreddit, size, ascending, last_record_date, verbose):
+def build_api_endpoint(subreddit, size, start_date, end_date, verbose):
     '''
     An easy API endpoint builder for PushShift's Reddit API.
     '''
     url_base = ('http://api.pushshift.io/reddit/submission/search/'
                f'?subreddit={ subreddit }&size={ size }')
-    if not last_record_date:
-        url = url_base
-    else:
-        if ascending:
-            url = url_base + f'&after={ last_record_date + 1 }&sort=asc'
-        else:
-            url = url_base + f'&before={ last_record_date - 1 }&sort=desc'
+    url = url_base + f'&before={ end_date + 1 }&after={ start_date }&sort=asc&sort_type=created_utc'
     if verbose:
         print(url)
         
     return url
 
 
-def download_subreddit_posts(subreddit, size=5000, ascending=False, 
-                             start_date=False, seen_ids=set(), 
-                             display_every_x_iterations=20,
+def download_subreddit_posts(subreddit, start_date, end_date, 
+                             size=500, seen_ids=set(), 
+                             display_every_x_iterations=1000,
                              verbose=True):
     '''
     Queries the pushshift.io API for a given `subreddit`.
@@ -40,39 +35,42 @@ def download_subreddit_posts(subreddit, size=5000, ascending=False,
     '''
     if not isinstance(seen_ids, set):
         raise "seen_ids needs to be a set!"
+        
     i = 0
     records = []
-    last_record_date = start_date
+    last_record_date = start_date - 1
+    pbar = tqdm(total=end_date - start_date, position=0, leave=True)
+    
     try:
         while True:
             # Buld the url
-            url = build_api_endpoint(subreddit, size, ascending, last_record_date, 
-                                     verbose if i % display_every_x_iterations == 0 else False)
+            url = build_api_endpoint(subreddit, size, last_record_date, end_date, False)
 
             # make the HTTP request to the API
             r = s.get(url)
             resp = r.json()
             data = resp.get('data')
-
-            # check which records were returned by the API and which are new?
-            # if there are no new IDs, then we're done!
-            paginated_ids = {row.get("id") for row in data}
-            new_ids = paginated_ids - seen_ids
-            if len(new_ids) == 0:
+            if len(data) == 0:
                 break
-
+            
+            paginated_ids = {row.get('id') for row in data}
+            
             # add new records to existing records. 
-            new_records = [row for row in data if row['id'] in new_ids]
+            new_records = [row for row in data if row['id'] not in seen_ids]
             records.extend(new_records)
 
             # collect all records created before the last record's date.
             last_record = data[-1]
-            last_record_date = last_record.get('created_utc')
+            first_record = data[0]
+            last_record_date = last_record.get('created_utc') + 1
+            first_record_date = first_record.get('created_utc') + 1
             i += 1
-            time.sleep(0.5)
+            pbar.update(last_record_date - first_record_date)
+            time.sleep(1)
     
     except KeyboardInterrupt:
         if verbose:
             print("Cancelled early")
-        
+    
+    pbar.close()
     return records

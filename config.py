@@ -1,11 +1,13 @@
 import os
-import datetime
+from datetime import datetime
 
 # change these!
 subreddit = 'dankmemes'
 author = 'made by meme-monitor @memeinfluence'
+start = '2021-01-01T00:00:00' # start of mosiac in UTC
+end = '2021-01-10T00:00:00' # end of mosiac in UTC
 mosiac_height, mosiac_width = 18, 32 # number of tiles 
-tile_height, tile_width = 28, 36 # pixel dims for each tile
+tile_height, tile_width = 36, 36 # pixel dims for each tile
 num_frames = 30
 fps = 2
 offset = 75 # number of new images introduced each frame
@@ -36,3 +38,5 @@ for _dir in [working_dir, media_dir, output_dir, mosaic_dir]:
 skip_hash = ['NOHASH', '0000000000000000', 'nan']
 n_dimensions = 2048 # features from resnet50, change this is you change the model in feature extraction.
 cols_conv_feats = [f'conv_{n}' for n in range(n_dimensions)]
+start_utc = int(datetime.strptime(start, '%Y-%m-%dT%H:%M:%S').timestamp())
+end_utc = int(datetime.strptime(end, '%Y-%m-%dT%H:%M:%S').timestamp())
