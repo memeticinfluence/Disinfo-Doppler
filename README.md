@@ -45,7 +45,7 @@ Specifically, the Meme Monitor will help evidence-based reporting and research i
 
 ## Credits - visit us at www.memeticinfluence.com
 
-**Dockerized and maintained by:**<br>
+**Developed by:**<br>
 [Jansen Derr](https://github.com/jansenderr) - [memetic influence](https://www.memeticinfluence.com)<br>
 Last Updated: 2021-02-26
 <br>
