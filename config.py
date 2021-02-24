@@ -3,6 +3,7 @@ import datetime
 
 # change these!
 subreddit = 'dankmemes'
+author = 'Jane Doe'
 mosiac_height, mosiac_width = 18, 32 # number of tiles 
 tile_height, tile_width = 28, 36 # pixel dims for each tile
 num_frames = 30
