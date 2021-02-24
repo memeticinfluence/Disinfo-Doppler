@@ -2,24 +2,6 @@
 
 # Create Mosaics of Imagery in Online Communities Over Time<br>
 
-**Initial Code by [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
-Published: 2019-04-06<br>
-<br>
-![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Leon%20Yin/themarkup_logo_small.jpg?raw=true)
-<br><br>
-**Technique by:**<br>
-[Dr. Joan Donovan](https://www.hks.harvard.edu/faculty/joan-donovan) - [HKS Shorenstein Center - TaSC](https://shorensteincenter.org/programs/technology-social-change/)<br>
-Created: 2019-2021<br><br>
-![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Harvard%20Kennedy%20School%20-%20Shorenstein%20Center/logo_small.png?raw=true)
-<br>
-<br>
-**Dockerized and maintained by:**<br>
-[Jansen Derr](https://github.com/jansenderr) - [memetic influence](https://www.memeticinfluence.com)<br>
-Last Updated: 2021-02-26
-<br>
-![](https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent_small.png?raw=true)
-<br>
-
 ## Installation Instructions:
 
 1. **Download** [Docker for Desktop](https://www.docker.com/products/docker-desktop) - restart your computer after installation and **make sure it is running** before continuing. In Docker Desktop, especially on Macs, please increase the amount of memory available to at least 8GB.
@@ -62,4 +44,22 @@ We seek to empower newsrooms, researchers and members of civil society groups to
 Specifically, the Meme Monitor will help evidence-based reporting and research into content that is ephemeral, unindexed and toxic in nature. The Meme Monitor would allow a greater variety of users the ability to navigate and investigate these spaces in a more secure and systematic way than is currently available. Formalizing how we observse this content is of utmost importance, as extended contact with these spaces is unnecessary and can lead to vicarious trauma, and in some rare cases radicalization. The Meme Monitor allows users to distance themselves from tertiary material not relevant to their investigation, while providing context vertically and horizontally.
 
 ### Visit us at www.memeticinfluence.com
-![](https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent.png?raw=true)
+
+**Dockerized and maintained by:**<br>
+[Jansen Derr](https://github.com/jansenderr) - [memetic influence](https://www.memeticinfluence.com)<br>
+Last Updated: 2021-02-26
+<br>
+![](https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent_small.png?raw=true)
+<br>
+**Technique by:**<br>
+[Dr. Joan Donovan](https://www.hks.harvard.edu/faculty/joan-donovan) - [HKS Shorenstein Center - TaSC](https://shorensteincenter.org/programs/technology-social-change/)<br>
+Created: 2019-2021<br><br>
+![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Harvard%20Kennedy%20School%20-%20Shorenstein%20Center/logo_small.png?raw=true)
+<br>
+<br>
+**Initial Code by [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
+Published: 2019-04-06<br>
+<br>
+![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Leon%20Yin/themarkup_logo_small.jpg?raw=true)
+<br><br>
+
