@@ -4,7 +4,9 @@
 
 **Initial Code by [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
 Published: 2019-04-06<br>
-<br>
+<br><br>
+![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Leon%20Yin/themarkup_logo_small.jpg?raw=true)
+<br><br>
 **Technique by:**<br>
 [Dr. Joan Donovan](https://www.hks.harvard.edu/faculty/joan-donovan) - [HKS Shorenstein Center - TaSC](https://shorensteincenter.org/programs/technology-social-change/)<br>
 Created: 2019-2021<br><br>
