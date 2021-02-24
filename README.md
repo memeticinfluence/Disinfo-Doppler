@@ -7,7 +7,7 @@ Published: 2019-04-06<br>
 <br>
 **Technique by:**<br>
 [Dr. Joan Donovan](https://www.hks.harvard.edu/faculty/joan-donovan) - [HKS Shorenstein Center - TaSC](https://shorensteincenter.org/programs/technology-social-change/)<br>
-Created: 2019-2021<br>
+Created: 2019-2021<br><br>
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Harvard%20Kennedy%20School%20-%20Shorenstein%20Center/logo_small.png?raw=true)
 <br>
 **Dockerized and maintained by:**<br>
