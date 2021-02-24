@@ -5,6 +5,9 @@
 **Initial Code by [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
 Published: 2019-04-06<br>
 <br>
+**Technique by:**<br>
+[Dr. Joan Donovan](https://www.hks.harvard.edu/faculty/joan-donovan) - [HKS Shorenstein Center - TaSC](https://shorensteincenter.org/programs/technology-social-change/)<br>
+Last Updated: 2021-02-21
 **Dockerized and maintained by:**<br>
 [Jansen Derr](https://github.com/jansenderr) - [memetic influence](https://www.memeticinfluence.com)<br>
 Last Updated: 2021-02-21
