@@ -1,26 +1,29 @@
-# Meme Monitor
-### Create Mosaics of Imagery in Online Communities Over Time
-
 ![](https://github.com/memeticinfluence/Disinfo-Doppler/blob/master/samples/header.gif?raw=true)
 
+# Create Mosaics of Imagery in Online Communities Over Time<br>
 
 **Initial Code by [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
 Published: 2019-04-06<br>
 <br>
 **Dockerized and maintained by:**<br>
-[Jansen Derr](https://github.com/jansenderr) - [memetic influence](www.memeticinfluence.com)<br>
+[Jansen Derr](https://github.com/jansenderr) - [memetic influence](https://www.memeticinfluence.com)<br>
 Last Updated: 2021-02-21
 
 ## Installation Instructions:
 
-1. Download [Docker for Desktop](https://www.docker.com/products/docker-desktop) - restart your computer after installation and make sure it is running before continuing. In Docker Desktop, especially on Macs, please increase the amount of memory available to at least 8GB.
-2. Clone this repo to your local machine and CD into Repo in terminal or CMD
-3. Run `docker-compose up` 
-4. When successfully started, a `URL` should appear in your terminal window. Copy and Paste this into a browser.
+1. **Download** [Docker for Desktop](https://www.docker.com/products/docker-desktop) - restart your computer after installation and **make sure it is running** before continuing. In Docker Desktop, especially on Macs, please increase the amount of memory available to at least 8GB.
+2. **Clone** this repo to your local machine and CD into Repo in terminal or CMD
+3. **Run** `docker-compose build` to build (required first boot/update) and `docker-compose up` to start server 
+4. **Copy and Paste** the Jupyter server notebook `URL` from Terminal into your local web browser.
 
 To update, simply `git pull` the repo and run `docker-compose build` to rebuild.
 
 Configure the subreddit to download from in `config.py`.
+
+#### Not working?
+**Not Starting:** Make sure `Docker Desktop` is running - pull the repo and run `docker-compose build`<br> -  Try `Kernel > Restart and Clear Output` in Jupyter<br>
+**Download Troubles:** clear `/data/platforms/reddit/` of all files - make sure folder structure `/data/platforms/reddit/<subreddit-name>/` exists<br>
+**Rendering Issues:**  clear the `mosaics` folder in `/data/platforms/reddit/<subreddit-name>` - create the `mosaics` folder in `/<subreddit-name>` if it doesn't exist<br>
 
 #### Need Help?
 **Email us:** code@memeticinfluence.com<br>
