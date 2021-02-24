@@ -30,8 +30,8 @@ Configure the subreddit to download from in `config.py`.
 **Tweet us:** [@memeinfluence](https://twitter.com/memeinfluence)<br>
 **Text us:**  855-420-MEME (6363)<br>
 
-## Intro
-**from [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
+
+## **Intro from [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
 The Meme Monitor is an open source computer vision toolkit used to trace and measure image-based activity online. These notebooks download imagery from various sources, such as subreddits, and then creates image-clustered mosaics over time. This helps us understand, visually, what sorts of source content and edits are being spread into an online community. 
 
 ## How does it work?
