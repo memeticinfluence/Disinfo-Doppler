@@ -19,7 +19,7 @@ data_dir = 'data/platforms/reddit'
 working_dir = os.path.join(data_dir, f'{subreddit}/')
 media_dir = os.path.join(data_dir, 'media')
 mosaic_dir = os.path.join(working_dir, 'mosaics')
-output_dir = os.path.join(data_dir, 'renders')
+output_dir = os.path.join(working_dir, 'renders')
 
 # files
 image_lookup_file = os.path.join(working_dir, 'media.csv.gz')
