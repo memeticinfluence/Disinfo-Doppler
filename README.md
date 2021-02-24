@@ -16,7 +16,7 @@ To **update**, simply `git pull` the repo and run `docker-compose build` to rebu
 ### Not working?
 **Not Starting:** Make sure `Docker Desktop` is running - pull the repo and run `docker-compose build`<br> -  Try `Kernel > Restart and Clear Output` in Jupyter<br>
 **Download Troubles:** clear `/data/platforms/reddit/` of all files - make sure folder structure `/data/platforms/reddit/<subreddit-name>/` exists<br>
-**Rendering Issues:**  clear the `mosaics` folder in `/data/platforms/reddit/<subreddit-name>` - create the `mosaics` folder in `/<subreddit-name>` if it doesn't exist<br>
+**Rendering Issues:**  clear the `mosaics` folder in `/data/platforms/reddit/<subreddit-name>` - create the `mosaics` folder in `/<subreddit-name>` if it doesn't exist - clear all `.gz` files in `/<subreddit-name>` and restart the whole process<br>
 
 ### Need Help?
 **Email us:** code@memeticinfluence.com<br>
