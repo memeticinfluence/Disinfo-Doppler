@@ -20,12 +20,12 @@ To update, simply `git pull` the repo and run `docker-compose build` to rebuild.
 
 Configure the subreddit to download from in `config.py`.
 
-#### Not working?
+### Not working?
 **Not Starting:** Make sure `Docker Desktop` is running - pull the repo and run `docker-compose build`<br> -  Try `Kernel > Restart and Clear Output` in Jupyter<br>
 **Download Troubles:** clear `/data/platforms/reddit/` of all files - make sure folder structure `/data/platforms/reddit/<subreddit-name>/` exists<br>
 **Rendering Issues:**  clear the `mosaics` folder in `/data/platforms/reddit/<subreddit-name>` - create the `mosaics` folder in `/<subreddit-name>` if it doesn't exist<br>
 
-#### Need Help?
+### Need Help?
 **Email us:** code@memeticinfluence.com<br>
 **Tweet us:** [@memeinfluence](https://twitter.com/memeinfluence)<br>
 **Text us:**  855-420-MEME (6363)<br>
