@@ -1,5 +1,3 @@
-# Meme Monitor
-
 ![](https://github.com/memeticinfluence/Disinfo-Doppler/blob/master/samples/header.gif?raw=true)
 
 ### Create Mosaics of Imagery in Online Communities Over Time<br>
