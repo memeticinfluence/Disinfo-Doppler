@@ -4,7 +4,7 @@
 
 **Initial Code by [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
 Published: 2019-04-06<br>
-<br><br>
+<br>
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Leon%20Yin/themarkup_logo_small.jpg?raw=true)
 <br><br>
 **Technique by:**<br>
