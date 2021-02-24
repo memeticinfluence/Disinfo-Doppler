@@ -16,9 +16,9 @@ Created: 2019-2021<br><br>
 **Dockerized and maintained by:**<br>
 [Jansen Derr](https://github.com/jansenderr) - [memetic influence](https://www.memeticinfluence.com)<br>
 Last Updated: 2021-02-21
-<br><br>
+<br>
 ![](https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent_small.png?raw=true)
-<br><br>
+<br>
 
 ## Installation Instructions:
 
