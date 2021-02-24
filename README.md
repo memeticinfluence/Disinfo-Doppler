@@ -21,8 +21,8 @@ To update, simply `git pull` the repo and run `docker-compose build` to rebuild.
 Configure the subreddit to download from in `config.py`.
 
 #### Not working?
-**Not Starting:** Make sure `Docker Desktop` is running - pull the repo and run `docker-compose build`<br> -  Try `Kernel > Restart and Clear Output` in Jupyter
-**Download Troubles:** clear /data/platforms/reddit/ of all files - make sure folder structure /data/platforms/reddit/<subreddit-name>/<br> exists
+**Not Starting:** Make sure `Docker Desktop` is running - pull the repo and run `docker-compose build`<br> -  Try `Kernel > Restart and Clear Output` in Jupyter<br>
+**Download Troubles:** clear /data/platforms/reddit/ of all files - make sure folder structure /data/platforms/reddit/<subreddit-name>/ exists<br>
 **Remdering issues**  clear the `mosaics` folder in `/data/platforms/reddit/<your-subreddit>` or create it if it doesn't exist/<br>
 
 #### Need Help?
