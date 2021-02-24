@@ -52,15 +52,14 @@ Last Updated: 2021-02-26
 ![](https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent_small.png?raw=true)
 <br>
 **Technique by:**<br>
+[Leon Yin](https://github.com/yinleon/Disinfo-Doppler)<br>
 [Dr. Joan Donovan](https://www.hks.harvard.edu/faculty/joan-donovan) - [HKS Shorenstein Center - TaSC](https://shorensteincenter.org/programs/technology-social-change/)<br>
-Created: 2019-2021<br><br>
+Published: 2019-04-06<br><br>
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Harvard%20Kennedy%20School%20-%20Shorenstein%20Center/logo_small.png?raw=true)
 <br>
 <br>
-**Initial code by:**<br>
-[Leon Yin](https://github.com/yinleon/Disinfo-Doppler)<br>
-Published: 2019-04-06<br>
+
+
 <br>
-![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Leon%20Yin/themarkup_logo_small.jpg?raw=true)
-<br><br>
+
 
