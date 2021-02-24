@@ -57,7 +57,8 @@ Created: 2019-2021<br><br>
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Harvard%20Kennedy%20School%20-%20Shorenstein%20Center/logo_small.png?raw=true)
 <br>
 <br>
-**Initial Code by [Leon Yin](https://github.com/yinleon/Disinfo-Doppler)**<br>
+**Initial Code**
+[Leon Yin](https://github.com/yinleon/Disinfo-Doppler)<br>
 Published: 2019-04-06<br>
 <br>
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Leon%20Yin/themarkup_logo_small.jpg?raw=true)
