@@ -9,7 +9,7 @@
 3. **Run** `docker-compose build` to build (required first boot/update) and `docker-compose up` to start server 
 4. **Copy and Paste** the Jupyter server notebook `URL` from Terminal into your local web browser.
 
-To **update**, simply `git pull` the repo and run `docker-compose build` to rebuild.
+To **update**, simply `git pull` the repo and run `docker-compose build` to rebuild. You should end with `Successfully tagged meme-monitor_jupyter:latest` when successfully built or rebuilt.
 
 **Configure** settings such as the subreddit to download from in `config.py`.
 
