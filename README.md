@@ -5,7 +5,7 @@
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/description.png?raw=true)
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent_small.png?raw=true">
+  <img src="https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent_small.png?raw=true">
 </p>
 
 ## Installation Instructions:
