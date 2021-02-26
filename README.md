@@ -4,6 +4,10 @@
 
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/description.png?raw=true)
 
+<p align="center">
+  <img width="460" height="300" src="https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent_small.png?raw=true">
+</p>
+
 ## Installation Instructions:
 
 1. **Download** [Docker for Desktop](https://www.docker.com/products/docker-desktop) - restart your computer after installation and **make sure it is running** before continuing. In Docker Desktop, especially on Macs, please increase the amount of memory available to at least 8GB.
