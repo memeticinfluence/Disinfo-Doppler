@@ -1,4 +1,4 @@
-![](https://github.com/memeticinfluence/Disinfo-Doppler/blob/master/samples/header.gif?raw=true)
+<center>![](https://github.com/memeticinfluence/Disinfo-Doppler/blob/master/samples/header.gif?raw=true)</center>
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/description.png?raw=true)
 
 # Create Mosaics of Imagery in Online Communities Over Time<br>
