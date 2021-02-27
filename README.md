@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="460" height="300" src="https://github.com/memeticinfluence/meme-observatory/blob/master/header.gif?raw=true">
+  <img width="460" height="300" src="https://github.com/memeticinfluence/meme-observatory/blob/master/samples/header.gif?raw=true">
 </p>
 
 ![](https://github.com/memeticinfluence/meme-observatory/blob/master/samples/description.png?raw=true)
