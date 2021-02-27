@@ -4,11 +4,13 @@
 
 ![](https://github.com/memeticinfluence/meme-monitor/blob/master/samples/description.png?raw=true)
 
-<center>
+<div align="center">
+
 Built for:             |  Developed by:
 :-------------------------:|:-------------------------:
 <img width="200" src="https://github.com/memeticinfluence/meme-monitor/blob/master/samples/credits/Harvard%20Kennedy%20School%20-%20Shorenstein%20Center/logo-color.png?raw=true">  |  <img src="https://github.com/memeticinfluence/logos/blob/main/horizontal_transparent_small.png?raw=true">
-</center>
+
+</div>
 
 ## Installation Instructions:
 
