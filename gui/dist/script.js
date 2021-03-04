@@ -1,0 +1,94 @@
+/*
+  Slidemenu
+*/
+(function () {
+  var $body = document.body,
+  $menu_trigger = $body.getElementsByClassName("menu-trigger")[0];
+
+  if (typeof $menu_trigger !== "undefined") {
+    $menu_trigger.addEventListener("click", function () {
+      $body.className =
+      $body.className == "menu-active" ? "" : "menu-active";
+    });
+  }
+}).call(this);
+
+/* Grid */
+
+const { useState } = React;
+
+const Square = ({ index, isActive, setActive }) => /*#__PURE__*/
+React.createElement("a", {
+  href: "#",
+  "data-index": index,
+  onClick: setActive,
+  className: `item ${isActive ? "active" : ""}` },
+
+index + 1);
+
+
+
+const App = () => {
+  const [clickedIndex, setClickedIndex] = useState(null);
+
+  const handleSetActive = event => {
+    const { dataset } = event.target;
+    setClickedIndex(Number(dataset.index));
+  };
+
+  const mappedItems = Array(100).
+  fill(null).
+  map((_, index) => /*#__PURE__*/
+  React.createElement(Square, {
+    key: index,
+    index: index,
+    isActive: clickedIndex === index,
+    setActive: handleSetActive }));
+
+
+
+  return /*#__PURE__*/React.createElement("div", { className: "grid" }, mappedItems);
+};
+
+ReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.getElementById("app"));
+
+//play button
+
+$(function () {
+  /**
+   * Store the transition end event names for convenience.
+   */
+  var transitionEnd =
+  "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd";
+
+  /**
+   * Trigger the play button states upon clicking.
+   */
+  $(".play-btn").click(function (e) {
+    e.preventDefault();
+
+    if ($(this).hasClass("stop")) {
+      $(this).removeClass("stop").addClass("to-play");
+    } else if (!$(this).hasClass("to-play")) {
+      $(this).addClass("stop");
+    }
+  });
+
+  /**
+   * Remove the 'to-play' class upon transition end.
+   */
+  $(document).on(transitionEnd, ".to-play", function () {
+    $(this).removeClass("to-play");
+  });
+});
+
+// slider
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+  output.innerHTML = this.value;
+};

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Meme Observatory GUI</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- CodePen Credits
+
+iOS style sliding menu - https://codepen.io/jasonhowmans/pen/dykhL
+CSS Grid - Square Links - https://codepen.io/sethdavis512/pen/JZNqJe
+Fixed bottom navigation bar bootstrap - https://codepen.io/bhatmahesht/pen/JdezEg
+Morphing Play Button - https://codepen.io/stidges/pen/vAgrb
+
+-->
+
+<!-- Navigation -->
+<nav id="slide-menu">
+    <ul>
+        <li><input type="checkbox" id="source1" name="source1" value="funny">
+            <label for="source1"> /r/funny </label><br>
+        </li>
+        <li><input type="checkbox" id="source2" name="source2" value="dankmemes">
+            <label for="source2"> /r/dankmemes </label><br>
+        </li>
+        <li><input type="checkbox" id="source3" name="source3" value="memes">
+            <label for="source3"> /r/memes </label><br>
+        </li>
+        <li class="sep"></li>
+        <li><input type="checkbox" id="source4" name="source4" value="pol">
+            <label for="source4"> /pol/ </label><br>
+        </li>
+        <li class="sep"></li>
+        <li>[+] Add Source</li>
+    </ul>
+</nav>
+<!-- Content panel -->
+<div id="content">
+    <div class="menu-trigger"></div>
+    <div class="container">
+
+        <div id="app"></div>
+
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<body>
+
+    <nav class="navbar navbar-fixed-bottom navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <div class="logo">
+                        <p class="top">meme observatory</p>
+                    </div>
+                </a>
+            </div>
+            <div>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><label for="start">Start date:</label>
+
+                            <input type="date" id="start" name="start" value="2018-07-22" min="2005-01-01" max="2030-12-31">
+                        </a></li>
+                    <li> <a href="#"> <label for="start">End date: </label>
+
+                            <input type="date" id="start" name="end" value="2018-07-22" min="2005-01-01" max="2030-12-31">
+                        </a></li>
+
+                    <div>
+                        <li><a href="" class="play-btn"></a></li>
+
+                        <!-- tried to add a slider, couldn't get it right
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
+                        </div>
+                    </div> -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
