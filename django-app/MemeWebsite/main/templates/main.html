@@ -1,0 +1,146 @@
+<!-- CodePen Credits
+
+iOS style sliding menu - https://codepen.io/jasonhowmans/pen/dykhL
+CSS Grid - Square Links - https://codepen.io/sethdavis512/pen/JZNqJe
+Fixed bottom navigation bar bootstrap - https://codepen.io/bhatmahesht/pen/JdezEg
+Morphing Play Button - https://codepen.io/stidges/pen/vAgrb
+
+-->
+
+<!-- Navigation -->
+{% load static %}
+<html>
+<head>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<link href="{% static "/css/main.css"%}" rel="stylesheet"/>
+</head>
+<nav id="slide-menu">
+    
+    <ul>
+        <li><select id="subreddits" class="form-control" onChange="get_mosaic(0)">
+            <option value="Dankmemes">Dankmemes</option>
+            <option value="titanfolk">Titanfolk</option>
+        </select></li>
+    </ul>
+</nav>
+
+<!-- Content panel -->
+<div id="content" style="padding:0px">
+    <div class="menu-trigger"></div>
+    <div id="app"></div>
+
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<body>
+
+    <div class="bottombar">
+        <div style="width: 50%; margin-left:auto; margin-right:auto;" class="row">
+            <div class="col-6"><h3 style="color:white">MEME OBSERVATORY</h3></div>
+            <div class="col-3"><h3 style="color:white" id="current-date">2020-12-31</h3></div>
+            <div class="col-1" onclick="get_mosaic(-1)" ><button id="btn-1" style="color:white; background-color:#333"><i class="fa fa-step-backward" style="font-size:50px;"></i></button></div>
+            <div class="col-1" onclick="startplaying()" ><button id="btn-2" style="color:white; background-color:#333"><i id="play-button" class="fa fa-play" style="font-size:50px;"></i></button></div>
+            <div class="col-1" onclick="get_mosaic(1)" ><button id="btn-3" style="color:white; background-color:#333"><i class="fa fa-step-forward" style="font-size:50px;"></i></button></div>
+        </div>
+    </div>
+
+</body>
+<script src="{% static "/js/main.js"%}"></script>
+<script>
+var playing = false;
+var interval;
+
+function startplaying(){
+    if (playing){
+        $("#play-button").removeClass('fa-stop').addClass('fa-play')
+        clearInterval(interval);
+    }else{
+        get_mosaic(1)
+        $("#play-button").removeClass('fa-play').addClass('fa-stop')
+        interval = setInterval(get_mosaic, 15000, 1);
+    }
+    playing = !playing;
+}
+
+function get_mosaic(offset){
+    document.getElementById("btn-1").disabled = true;
+    document.getElementById("btn-2").disabled = true;
+    document.getElementById("btn-3").disabled = true;
+    document.getElementById("subreddits").disabled = true;
+    var dt = document.getElementById("current-date").textContent;
+    $("#app").html('<div class="text-center"><div class="spinner-border m-${padding}" role="status" style="width: 30rem; height: 30rem;"><span class="sr-only">Loading...</span></div></div>')
+    $("#current-date").html('<div class="text-center"><div class="spinner-border m-${padding}" role="status" style="width: 3rem; height: 3rem;"><span class="sr-only">Loading...</span></div></div>')
+    $.ajax({
+            type: "GET",
+            url: "{% url "get_mosaic"%}",
+            data: {
+                "subreddit": document.getElementById("subreddits").value,
+                "date": dt,
+                "offset": offset
+            }
+        }).then(function (response){
+            $("#app").html(response.body)
+            $("#current-date").html(response.dt)
+            document.getElementById("btn-1").disabled = false;
+            document.getElementById("btn-2").disabled = false;
+            document.getElementById("btn-3").disabled = false;
+            document.getElementById("subreddits").disabled = false;
+        });
+}
+get_mosaic(0)
+</script>
+</html>
+
+<!--
+
+|------Developed by------|
+|------Mitch Chaiet------|
+|---memetic influence----|
+|-------March 2021-------|
+|-HKS Shorenstein Center-|
+
+__________████████_____██████
+_________█░░░░░░░░██_██░░░░░░█
+________█░░░░░░░░░░░█░░░░░░░░░█
+_______█░░░░░░░███░░░█░░░░░░░░░█
+_______█░░░░███░░░███░█░░░████░█
+______█░░░██░░░░░░░░███░██░░░░██
+_____█░░░░░░░░░░░░░░░░░█░░░░░░░░███
+____█░░░░░░░░░░░░░██████░░░░░████░░█
+____█░░░░░░░░░█████░░░████░░██░░██░░█
+___██░░░░░░░███░░░░░░░░░░█░░░░░░░░███
+__█░░░░░░░░░░░░░░█████████░░█████████
+_█░░░░░░░░░░█████_████___████_█████___█
+_█░░░░░░░░░░█______█_███__█_____███_█___█
+█░░░░░░░░░░░░█___████_████____██_██████
+░░░░░░░░░░░░░█████████░░░████████░░░█
+░░░░░░░░░░░░░░░░█░░░░░█░░░░░░░░░░░░█
+░░░░░░░░░░░░░░░░░░░░██░░░░█░░░░░░██
+░░░░░░░░░░░░░░░░░░██░░░░░░░███████
+░░░░░░░░░░░░░░░░██░░░░░░░░░░█░░░░░█
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+░░░░░░░░░░░█████████░░░░░░░░░░░░░░██
+░░░░░░░░░░█▒▒▒▒▒▒▒▒███████████████▒▒█
+░░░░░░░░░█▒▒███████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
+░░░░░░░░░█▒▒▒▒▒▒▒▒▒█████████████████
+░░░░░░░░░░████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█
+░░░░░░░░░░░░░░░░░░██████████████████
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█
+██░░░░░░░░░░░░░░░░░░░░░░░░░░░██
+▓██░░░░░░░░░░░░░░░░░░░░░░░░██
+▓▓▓███░░░░░░░░░░░░░░░░░░░░█
+▓▓▓▓▓▓███░░░░░░░░░░░░░░░██
+▓▓▓▓▓▓▓▓▓███████████████▓▓█
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█-->
