@@ -10,92 +10,91 @@ Morphing Play Button - https://codepen.io/stidges/pen/vAgrb
 <!-- Navigation -->
 {% load static %}
 <html>
-<head>
-<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <head>
 
-<link href="{% static "/css/main.css"%}" rel="stylesheet"/>
-</head>
-<nav id="slide-menu">
-    
-    <ul>
-        <li><select id="subreddits" class="form-control" onChange="get_mosaic(0)">
-            <option value="Dankmemes">Dankmemes</option>
-            <option value="titanfolk">Titanfolk</option>
-        </select></li>
-    </ul>
-</nav>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <link href="{% static "/css/main.css"%}" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+        <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+    </head> 
+
+    <nav id="slide-menu">
+        <ul>
+            <div class="form-group">
+                <label for="start_date">Subreddit</label>
+                <select id="subreddits" class="selectpicker" onChange="get_mosaic(0)" data-live-search="true" style="width:100%">
+                    {% for option in options %}
+                        <option value="{{option}}">{{option}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group" style="margin-top:50px">
+                <label for="start_date">Start Date</label>
+                <input type="date" class="form-control" id="start_date" value="2021-01-01" min="2020-01-01" max="2021-02-01">
+            </div>
+            
+            <div class="form-group">
+                <label for="end_date">End Date</label>
+                <input type="date" class="form-control" id="end_date" value="2021-01-14" min="2020-01-01" max="2021-02-01">
+            </div>
+            <div class="form-group" style="margin-top:50px">
+                <a href="/static/mosaics/dankmemes_20201231.png" id="img_dwn" class="dwn_btn" download><i class="fa fa-download" download></i> Download</a>
+            </div>
+            
+
+
+        </ul>
+    </nav>
 
 <!-- Content panel -->
-<div id="content" style="padding:0px">
-    <div class="menu-trigger"></div>
-    <div id="app"></div>
-
-</div>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<body>
-
-    <div class="bottombar">
-        <div style="width: 50%; margin-left:auto; margin-right:auto;" class="row">
-            <div class="col-6"><h3 style="color:white">MEME OBSERVATORY</h3></div>
-            <div class="col-3"><h3 style="color:white" id="current-date">2020-12-31</h3></div>
-            <div class="col-1" onclick="get_mosaic(-1)" ><button id="btn-1" style="color:white; background-color:#333"><i class="fa fa-step-backward" style="font-size:50px;"></i></button></div>
-            <div class="col-1" onclick="startplaying()" ><button id="btn-2" style="color:white; background-color:#333"><i id="play-button" class="fa fa-play" style="font-size:50px;"></i></button></div>
-            <div class="col-1" onclick="get_mosaic(1)" ><button id="btn-3" style="color:white; background-color:#333"><i class="fa fa-step-forward" style="font-size:50px;"></i></button></div>
+    <div id="content" style="padding:0px">
+        <div class="menu-trigger"></div>
+        <div id="app">
         </div>
+
     </div>
 
-</body>
+    <body>
+
+        
+        <nav class="bottombar">
+            <div class="container" style="text-align:center">
+                <div class="navbar-header">
+                    <div class="logo">
+                        <p class="top">meme observatory</p>
+                    </div>
+                    
+                    <div class="logo">
+                        <p id="current-date" class="top">2021-01-01</p>
+                    </div>
+                    <button id="btn-1" onclick="get_mosaic(-1)" class="bar_btn"><i class="fa fa-step-backward"></i></button>
+                    <button id="btn-2" onclick="startplaying()" class="bar_btn"><i class="fa fa-play"></i></button>
+                    <button  id="btn-3" onclick="get_mosaic(1)" class="bar_btn"><i class="fa fa-step-forward"></i></button>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </nav>
+
+    </body>
 <script src="{% static "/js/main.js"%}"></script>
 <script>
-var playing = false;
-var interval;
-
-function startplaying(){
-    if (playing){
-        $("#play-button").removeClass('fa-stop').addClass('fa-play')
-        clearInterval(interval);
-    }else{
-        get_mosaic(1)
-        $("#play-button").removeClass('fa-play').addClass('fa-stop')
-        interval = setInterval(get_mosaic, 15000, 1);
-    }
-    playing = !playing;
-}
-
-function get_mosaic(offset){
-    document.getElementById("btn-1").disabled = true;
-    document.getElementById("btn-2").disabled = true;
-    document.getElementById("btn-3").disabled = true;
-    document.getElementById("subreddits").disabled = true;
-    var dt = document.getElementById("current-date").textContent;
-    $("#app").html('<div class="text-center"><div class="spinner-border m-${padding}" role="status" style="width: 30rem; height: 30rem;"><span class="sr-only">Loading...</span></div></div>')
-    $("#current-date").html('<div class="text-center"><div class="spinner-border m-${padding}" role="status" style="width: 3rem; height: 3rem;"><span class="sr-only">Loading...</span></div></div>')
-    $.ajax({
-            type: "GET",
-            url: "{% url "get_mosaic"%}",
-            data: {
-                "subreddit": document.getElementById("subreddits").value,
-                "date": dt,
-                "offset": offset
-            }
-        }).then(function (response){
-            $("#app").html(response.body)
-            $("#current-date").html(response.dt)
-            document.getElementById("btn-1").disabled = false;
-            document.getElementById("btn-2").disabled = false;
-            document.getElementById("btn-3").disabled = false;
-            document.getElementById("subreddits").disabled = false;
-        });
-}
-get_mosaic(0)
 </script>
 </html>
 
