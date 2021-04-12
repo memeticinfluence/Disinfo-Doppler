@@ -39,7 +39,7 @@ def download_subreddit_posts(subreddit, start_date, end_date,
     i = 0
     records = []
     last_record_date = start_date - 1
-    pbar = tqdm(total=end_date - start_date, position=0, leave=True)
+    # pbar = tqdm(total=end_date - start_date, position=0, leave=True)
     
     try:
         while True:
@@ -65,12 +65,12 @@ def download_subreddit_posts(subreddit, start_date, end_date,
             last_record_date = last_record.get('created_utc') + 1
             first_record_date = first_record.get('created_utc') + 1
             i += 1
-            pbar.update(last_record_date - first_record_date)
+            # pbar.update(last_record_date - first_record_date)
             time.sleep(1)
     
     except KeyboardInterrupt:
         if verbose:
             print("Cancelled early")
     
-    pbar.close()
+    # pbar.close()
     return records

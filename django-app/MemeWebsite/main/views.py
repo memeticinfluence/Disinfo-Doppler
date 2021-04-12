@@ -16,6 +16,7 @@ def get_sql_connection():
 def main(request):
     db = get_sql_connection()
     options = list(pd.read_sql('select distinct(subreddit) from mosaics order by subreddit', db).iloc[:, 0])
+    print(options)
     db.dispose()
 
     return render(request, 'main.html', context={'options':options})

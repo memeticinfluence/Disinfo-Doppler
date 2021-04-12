@@ -67,6 +67,7 @@ function get_mosaic(offset) {
         document.getElementById("btn-2").disabled = false;
         document.getElementById("btn-3").disabled = false;
         document.getElementById("subreddits").disabled = false;
+        $('#subreddits').selectpicker('refresh');
         document.getElementById("img_dwn").href = `/static/mosaics/${subreddit}_${response.dt.replaceAll("-", "")}.png`
     });
 }

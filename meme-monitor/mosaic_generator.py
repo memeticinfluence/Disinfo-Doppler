@@ -4,7 +4,6 @@ import warnings
 
 import mosaic
 import pandas as pd
-from tqdm import tqdm
 import config
 import context_manager
 import data_sources.pushshift as ps
@@ -84,6 +83,13 @@ def get_subreddit_context(subreddit):
     }
 
     return context
+
+def get_sql_connection():
+        db = create_engine(
+            "mysql://admin:65Qyw6pgSo8F3LyiASFr@meme-observatory.cizj1wczwqh5.us-west-2.rds.amazonaws.com:3306/meme_observatory?charset=utf8",
+            encoding="utf8",
+        )
+        return db
 
 
 def download_images(row):
@@ -166,6 +172,8 @@ def main(input_date, subreddit):
             subreddit, start_ux, end_ux, verbose=False
         )
         df = pd.DataFrame(records)
+        if 'preview' not in df:
+            return
         df["preview"] = df["preview"].apply(json.dumps)
         # df.to_csv(new_dir, index=False, compression='gzip')
 
@@ -181,13 +189,13 @@ def main(input_date, subreddit):
     if os.path.exists(image_meta_dir):
         _df_img_meta = pd.read_csv(image_meta_dir)
     else:
-        bar = tqdm(total=len(df_media), desc="Downloading images")
+        # bar = tqdm(total=len(df_media), desc="Downloading images")
         img_meta = []
-        p = Pool()
+        p = Pool(4)
         for o in p.imap_unordered(download_images, df_media):
             if o != -1:
                 img_meta.append(o)
-            bar.update(1)
+            # bar.update(1)
         _df_img_meta = pd.DataFrame(img_meta).drop("subreddit", axis=1)
         # _df_img_meta.to_csv(image_meta_dir, index=False, compression='gzip')
 
@@ -262,7 +270,7 @@ def main(input_date, subreddit):
         except:
             conv = None
     df_convs = []
-    for (X, img_file, idx) in tqdm(data_loader):
+    for (X, img_file, idx) in data_loader:
         filt = (
             [i for i in idx if i not in conv.index]
             if conv is not None
@@ -288,7 +296,7 @@ def main(input_date, subreddit):
             df_conv["f_img"] = img_file
             df_conv = df_conv.loc[filt]
             df_convs.append(df_conv)
-
+            
     conv = pd.concat([conv, *df_convs]).drop_duplicates()
 
     # conv.to_csv(logits_dir, compression='gzip')
@@ -368,22 +376,19 @@ def main(input_date, subreddit):
     # sample the dataset
     df_sample = df_merged.sample(sample_size, random_state=303)
     images = df_sample.f_img
-    embeddings = encoder.transform(
-        df_sample[config.cols_conv_feats]
-        .replace([-np.inf, np.inf], np.nan)
-        .fillna(0)
-        .values
-    )
+    try:
+        embeddings = encoder.transform(
+            df_sample[config.cols_conv_feats]
+            .replace([-np.inf, np.inf], np.nan)
+            .fillna(0)
+            .values
+        )
+    except:
+        return
 
     grid_assignment = transformPointCloud2D(embeddings, target=(nx, ny))
 
-    def get_sql_connection():
-        db = create_engine(
-            "mysql://admin:65Qyw6pgSo8F3LyiASFr@meme-observatory.cizj1wczwqh5.us-west-2.rds.amazonaws.com:3306/meme_observatory?charset=utf8",
-            encoding="utf8",
-        )
-        return db
-
+    
     db = get_sql_connection()
     wanted_cols = ["url", "full_link", "x", "y"]
     df_sample[["x", "y"]] = grid_assignment[0].astype(int)
@@ -401,7 +406,7 @@ def main(input_date, subreddit):
     mosaic = Image.new("RGB", (full_width, full_height))
 
     # iterate through each image and where it is possed to live.
-    for f_img, (idx_x, idx_y) in tqdm(zip(images, grid_assignment[0]), disable=False):
+    for f_img, (idx_x, idx_y) in zip(images, grid_assignment[0]):
         # Find exactly where the image will be
         x, y = tile_width * idx_x, tile_height * idx_y
 
@@ -427,6 +432,10 @@ def main(input_date, subreddit):
 
 
 if __name__ == "__main__":
+    db = get_sql_connection()
+    df = pd.read_sql('select distinct subreddit, dt from mosaics', db)
+    df['dt'] = pd.to_datetime(df['dt']).apply(lambda x: x.strftime("%Y%m%d"))
+    ran_vals = df.values.tolist() 
     dates = [
         "20210101",
         "20210102",
@@ -463,53 +472,23 @@ if __name__ == "__main__":
         "4chan",
         "AdviceAnimals",
         "Anarcho_Capitalism",
-        "AskThe_Donald",
         "ComedyCemetery",
-        "COMPLETEANARCHY",
         "conservatives",
         "ConservativeMemes",
         "DankLeft",
-        "DeclineIntoCensorship",
         "donaldtrump",
-        "Donald_Trump",
-        "DrainTheSwamp",
-        "drumpfisfinished",
         "EnoughTrumpSpam",
-        "ENLIGHTENEDCENTRISM",
         "WayOfTheBern",
         "FixedPoliticalMemes",
-        "FULLCOMMUNISM",
         "funny",
         "HillaryForPrison",
         "JoeBiden",
         "JoeRogan",
-        "KotakuInAction",
-        "Liberal",
-        "Libertarian",
-        "libertarianmeme",
-        "memes",
-        "MemeEconomy",
-        "PewdiepieSubmissions",
-        "PoliticalCompassMemes",
-        "PoliticalHumor",
-        "PoliticalMemes",
-        "PresidentialRaceMemes",
-        "progressive",
-        "Republican",
-        "ShitPoliticsSays",
-        "SocialDemocracy",
-        "stupidpol",
-        "subredditcancer",
-        "TheLeftCantMeme",
-        "TimPool",
-        "ToiletPaperUSA",
-        "tucker_carlson",
-        "TumblrInAction",
-        "trump",
-        "walkaway",
-        "WatchRedditDie",
-        "WojakCompass",
     ]
+    bar = tqdm(total = len(dates) * len(subreddits))
     for d in dates:
         for sub in subreddits:
-            main(d, sub)
+            bar.set_description(f"{sub} {d}")
+            if [sub,d] not in ran_vals:
+                main(d, sub)
+            bar.update(1)
